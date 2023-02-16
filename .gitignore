@@ -2,3 +2,9 @@
 .vscode
 __pycache__
 *.pyc
+*.csv
+*.xml
+*.yaml
+*.json
+*.txt
+!requirements.txt
