@@ -63,7 +63,12 @@ class AppleMusicParseXML:
                     if tracks[track][track_element].text == "Track ID":
                         track_id = tracks[track][track_element + 1].text
                     readable_track_element = tracks[track][track_element].text
-                    readable_tracks_element_temp[track_id][readable_track_element] = tracks[track][track_element + 1].text
+                    if tracks[track][track_element].text == 'Apple Music':
+                        readable_tracks_element_temp[track_id][readable_track_element] = tracks[track][track_element + 1].tag.title()
+                    elif tracks[track][track_element].text == 'Loved':
+                        readable_tracks_element_temp[track_id][readable_track_element] = tracks[track][track_element + 1].tag.title()
+                    else:
+                        readable_tracks_element_temp[track_id][readable_track_element] = tracks[track][track_element + 1].text
                 readable_tracks_column_temp.add(readable_track_element)
 
         readable_tracks_element: Dict[str, Dict[str, str]] = dict(readable_tracks_element_temp)
