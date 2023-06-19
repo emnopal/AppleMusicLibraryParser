@@ -8,3 +8,5 @@ __pycache__
 *.json
 *.txt
 !requirements.txt
+apple_music_spotify
+.DS_Store
